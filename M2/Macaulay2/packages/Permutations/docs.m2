@@ -326,10 +326,12 @@ doc ///
 ///
 
 -- Permutation
+-- permutation
 -- (permutation, VisibleList)
 doc ///
   Key
     Permutation
+    permutation
     (permutation, VisibleList)
   Headline
     the Permutation type
@@ -786,6 +788,8 @@ doc ///
     Example
       p = permutation {3,1,2,5,4}
       avoidsPattern(p, {2,1,4,3})
+  Acknowledgement
+    This function was ported over from v1.0 of the {\em MatrixSchubert} package.
   SeeAlso
     avoidsPatterns
     isCartwrightSturmfels
@@ -813,6 +817,8 @@ doc ///
     Example
       p = permutation {3,1,2,5,4}
       avoidsPatterns(p, {{2,1,4,3}, {1,4,3,2}})
+  Acknowledgement
+    This function was ported over from v1.0 of the {\em MatrixSchubert} package.
   SeeAlso
     avoidsPattern
     isCartwrightSturmfels
@@ -935,6 +941,7 @@ doc ///
   Key
     exceedances
     (exceedances, Permutation)
+    [exceedances, Weak]
   Headline
     computes the exceedances of a permutation
   Usage
@@ -964,6 +971,29 @@ doc ///
     descents
     saliances
     records
+///
+
+doc ///
+  Key
+    Weak
+  Headline
+    whether to use strict inequalities
+  Description
+    Text
+      A permutation $p=(p_1 \, \dots \, p_n)$ has an {\em exceedance} at $i$ if 
+      $p(i) > i$.
+    Example
+      p = permutation {3,1,2,5,4}
+      exceedances p
+    Text
+      This is called a {\em weak exceedance} if the inequality is not strict, 
+      i.e., $p(i) \geq i$. Using the {\tt Weak} option, we can compute the weak
+      exceedances of a permutation.
+    Example
+      p = permutation {3,1,2,5,4}
+      exceedances(p, Weak=>true)
+  SeeAlso
+    exceedances
 ///
 
 -- extend(w,n)
@@ -1134,6 +1164,8 @@ doc ///
     Example
       p = permutation {3,1,2,5,4}
       isCartwrightSturmfels p
+  Acknowledgement
+    This function was ported over from v1.0 of the {\em MatrixSchubert} package.
   SeeAlso
     avoidsPattern
     avoidsPatterns
@@ -1162,6 +1194,8 @@ doc ///
     Example
       p = permutation {3,1,2,5,4}
       isCDG p
+  Acknowledgement
+    This function was ported over from v1.0 of the {\em MatrixSchubert} package.
   SeeAlso
     avoidsPattern
     avoidsPatterns
